@@ -15,6 +15,48 @@ themeToggle.addEventListener('click', () => {
     setTheme(isDark);
 });
 
+const checkoutModal = document.querySelector('.checkout-modal');
+const checkoutPlan = document.querySelector('[data-checkout-plan]');
+const checkoutPrice = document.querySelector('[data-checkout-price]');
+const checkoutTriggers = document.querySelectorAll('.checkout-trigger');
+const checkoutCloseControls = document.querySelectorAll('[data-checkout-close]');
+const checkoutContinue = document.querySelector('[data-checkout-continue]');
+
+const closeCheckout = () => {
+    checkoutModal.classList.remove('is-open');
+    checkoutModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+};
+
+checkoutTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+        checkoutPlan.textContent = trigger.dataset.plan;
+        checkoutPrice.textContent = trigger.dataset.price;
+        checkoutModal.classList.add('is-open');
+        checkoutModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        checkoutModal.querySelector('input:checked').focus();
+    });
+});
+
+checkoutCloseControls.forEach((control) => control.addEventListener('click', closeCheckout));
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && checkoutModal.classList.contains('is-open')) closeCheckout();
+});
+
+document.querySelectorAll('.payment-method').forEach((method) => {
+    method.addEventListener('click', () => {
+        document.querySelectorAll('.payment-method').forEach((item) => item.classList.remove('is-selected'));
+        method.classList.add('is-selected');
+    });
+});
+
+checkoutContinue.addEventListener('click', () => {
+    checkoutContinue.textContent = 'Stripe checkout will open here';
+    checkoutContinue.disabled = true;
+});
+
 if (!reduceMotion && 'IntersectionObserver' in window) {
     const revealTargets = document.querySelectorAll(
         '.workflow, .showcase, .feature-band, .pricing, .faq, .final-cta, .logo-strip',
