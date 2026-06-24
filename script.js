@@ -21,6 +21,20 @@ const checkoutPrice = document.querySelector('[data-checkout-price]');
 const checkoutTriggers = document.querySelectorAll('.checkout-trigger');
 const checkoutCloseControls = document.querySelectorAll('[data-checkout-close]');
 const checkoutContinue = document.querySelector('[data-checkout-continue]');
+const checkoutForm = document.querySelector('[data-checkout-form]');
+const checkoutFeedback = document.querySelector('[data-checkout-feedback]');
+const paymentPanels = document.querySelectorAll('[data-payment-panel]');
+
+const selectPaymentMethod = (methodName) => {
+    paymentPanels.forEach((panel) => {
+        const isActive = panel.dataset.paymentPanel === methodName;
+        panel.hidden = !isActive;
+        panel.querySelectorAll('input').forEach((input) => {
+            input.disabled = !isActive;
+            input.required = isActive;
+        });
+    });
+};
 
 const closeCheckout = () => {
     checkoutModal.classList.remove('is-open');
@@ -35,6 +49,13 @@ checkoutTriggers.forEach((trigger) => {
         checkoutModal.classList.add('is-open');
         checkoutModal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-open');
+        checkoutForm.reset();
+        checkoutFeedback.hidden = true;
+        checkoutContinue.disabled = false;
+        checkoutContinue.innerHTML = 'Complete demo payment <span>↗</span>';
+        document.querySelector('input[value="card"]').checked = true;
+        document.querySelectorAll('.payment-method').forEach((item) => item.classList.toggle('is-selected', item.querySelector('input').value === 'card'));
+        selectPaymentMethod('card');
         checkoutModal.querySelector('input:checked').focus();
     });
 });
@@ -49,12 +70,15 @@ document.querySelectorAll('.payment-method').forEach((method) => {
     method.addEventListener('click', () => {
         document.querySelectorAll('.payment-method').forEach((item) => item.classList.remove('is-selected'));
         method.classList.add('is-selected');
+        selectPaymentMethod(method.querySelector('input').value);
     });
 });
 
-checkoutContinue.addEventListener('click', () => {
-    checkoutContinue.textContent = 'Xendit checkout will open here';
+checkoutForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    checkoutContinue.textContent = 'Demo payment approved';
     checkoutContinue.disabled = true;
+    checkoutFeedback.hidden = false;
 });
 
 if (!reduceMotion && 'IntersectionObserver' in window) {

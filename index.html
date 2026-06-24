@@ -109,8 +109,25 @@
           <label class="payment-method"><input type="radio" name="payment-method" value="wallet"><span class="method-icon">◒</span><span><b>E-wallet</b><small>GCash, Maya, or enabled wallet channels</small></span><i>✓</i></label>
           <label class="payment-method"><input type="radio" name="payment-method" value="bank"><span class="method-icon">₱</span><span><b>Bank payment</b><small>Available when enabled in Xendit</small></span><i>✓</i></label>
         </fieldset>
-        <button class="button checkout-continue" type="button" data-checkout-continue>Continue to Xendit checkout <span>↗</span></button>
-        <p class="checkout-note">Payments are securely processed by Xendit. Roarly never stores card details.</p>
+        <p class="checkout-demo-notice">Demo checkout only. Use fictional test details; nothing entered here is sent or stored.</p>
+        <form class="checkout-form" data-checkout-form>
+          <div class="payment-fields" data-payment-panel="card">
+            <label>Cardholder name<input name="card-name" autocomplete="cc-name" placeholder="Alex Santos" required></label>
+            <label>Card number<input name="card-number" inputmode="numeric" autocomplete="cc-number" placeholder="4111 1111 1111 1111" required></label>
+            <div class="field-row"><label>Expiry date<input name="card-expiry" inputmode="numeric" autocomplete="cc-exp" placeholder="12 / 28" required></label><label>CVC<input name="card-cvc" inputmode="numeric" autocomplete="cc-csc" placeholder="123" required></label></div>
+          </div>
+          <div class="payment-fields" data-payment-panel="wallet" hidden>
+            <label>Email address<input name="wallet-email" type="email" autocomplete="email" placeholder="alex@example.com" disabled></label>
+            <label>Mobile number<input name="wallet-phone" inputmode="tel" placeholder="0917 123 4567" disabled></label>
+          </div>
+          <div class="payment-fields" data-payment-panel="bank" hidden>
+            <label>Email address<input name="bank-email" type="email" autocomplete="email" placeholder="alex@example.com" disabled></label>
+            <label>Account holder name<input name="bank-name" placeholder="Alex Santos" disabled></label>
+          </div>
+          <button class="button checkout-continue" type="submit" data-checkout-continue>Complete demo payment <span>↗</span></button>
+        </form>
+        <p class="checkout-feedback" data-checkout-feedback hidden aria-live="polite">Demo payment approved. In the real app, Xendit’s webhook would activate the subscription and add credits.</p>
+        <p class="checkout-note">Real payments will be securely processed by Xendit. Roarly will never store card details.</p>
       </section>
     </div>
     <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
