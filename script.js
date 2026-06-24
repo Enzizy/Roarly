@@ -53,7 +53,7 @@ document.querySelectorAll('.payment-method').forEach((method) => {
 });
 
 checkoutContinue.addEventListener('click', () => {
-    checkoutContinue.textContent = 'Stripe checkout will open here';
+    checkoutContinue.textContent = 'Xendit checkout will open here';
     checkoutContinue.disabled = true;
 });
 
