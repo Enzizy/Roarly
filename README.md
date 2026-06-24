@@ -7,7 +7,7 @@ Standalone frontend prototype for the public Roarly marketing website.
 - Landing page and product positioning
 - Workflow, use-case, FAQ, and pricing sections
 - Register/login and Subscribe button placeholders
-- Black and gold visual system aligned with the app reference
+- White and gold visual system aligned with the current app direction
 
 ## Run locally
 
@@ -26,12 +26,6 @@ Website pricing UI -> sign in/register -> hosted payment checkout
 
 The marketing site must not grant subscription access based only on a browser redirect. The authenticated web app will own checkout creation, payment-webhook verification, subscriptions, and credits.
 
-## Publish to GitHub
+## Publishing
 
-After creating an empty GitHub repository, connect and push this local repository:
-
-```bash
-git remote add origin https://github.com/YOUR-ACCOUNT/YOUR-MARKETING-REPO.git
-git branch -M main
-git push -u origin main
-```
+The repository is published at `https://github.com/Enzizy/Roarly`. GitHub Pages deployment is defined in `.github/workflows/deploy-pages.yml`.
