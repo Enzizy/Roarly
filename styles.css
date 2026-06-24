@@ -36,3 +36,31 @@ body { background:var(--page); color:#211d14; }
 
 /* Full-width header for the one-page site. */
 .site-header { width:100%; max-width:none; padding-inline:clamp(16px,4vw,56px); }
+
+/* Motion: short, purposeful, and disabled for reduced-motion preferences. */
+@media (prefers-reduced-motion: no-preference) {
+  .site-header { animation: header-drop .55s cubic-bezier(.2,.8,.2,1) both; }
+  .hero-copy > * { animation: hero-rise .7s cubic-bezier(.2,.8,.2,1) both; }
+  .hero-copy > :nth-child(1) { animation-delay:.08s; }
+  .hero-copy > :nth-child(2) { animation-delay:.16s; }
+  .hero-copy > :nth-child(3) { animation-delay:.25s; }
+  .hero-copy > :nth-child(4) { animation-delay:.34s; }
+  .hero-copy > :nth-child(5) { animation-delay:.43s; }
+  .hero-art { animation: art-rise .9s .2s cubic-bezier(.2,.8,.2,1) both; }
+  .sun { animation: sun-pulse 4s ease-in-out infinite; }
+  .floating-card { animation: card-float 4.6s ease-in-out infinite; }
+  .card-export { animation-delay:-2.3s; }
+  .reveal { opacity:0; transform:translateY(26px); transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1); }
+  .reveal.is-visible { opacity:1; transform:none; }
+  .steps li,.case-card,.plan-card { transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease; }
+  .steps li:hover,.case-card:hover,.plan-card:hover { transform:translateY(-5px); border-color:#c89513; box-shadow:0 15px 28px #9d771b20; }
+  .faq-list details { transition:background .2s ease,padding .2s ease; }
+  .faq-list details:hover { background:#fff9e8; }
+  .button { transition:background .2s ease,transform .2s ease,box-shadow .2s ease; }
+  .button:hover { box-shadow:0 9px 18px #b7821f2e; }
+}
+@keyframes header-drop { from { opacity:0; transform:translateY(-12px); } to { opacity:1; transform:none; } }
+@keyframes hero-rise { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:none; } }
+@keyframes art-rise { from { opacity:0; transform:translateY(28px) scale(.97); } to { opacity:1; transform:none; } }
+@keyframes sun-pulse { 50% { transform:scale(1.08); box-shadow:0 0 62px #dba92977; } }
+@keyframes card-float { 50% { transform:translateY(-8px); } }
