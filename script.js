@@ -5,7 +5,6 @@ const setTheme = (isDark) => {
     document.documentElement.classList.toggle('dark-mode', isDark);
     themeToggle.setAttribute('aria-pressed', String(isDark));
     themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-    themeToggle.querySelector('span').textContent = isDark ? '☀' : '☾';
 };
 
 setTheme(document.documentElement.classList.contains('dark-mode'));
