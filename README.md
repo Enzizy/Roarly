@@ -1,6 +1,6 @@
 # Roarly Marketing Site
 
-Standalone frontend prototype for the public Roarly/Animotion marketing website.
+Standalone frontend prototype for the public Roarly marketing website.
 
 ## Current scope
 
