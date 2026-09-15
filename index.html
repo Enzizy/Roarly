@@ -5,193 +5,257 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="CasaToon turns your ideas into colorful animated stories with AI." />
     <title>CasaToon — Bring Your Stories to Life</title>
+    <link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./public/favicon-512.png" />
+    <link rel="apple-touch-icon" href="./public/favicon-512.png" />
+    <meta name="theme-color" content="#1f6ff0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div class="toon-cursor" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="28" height="28"><path d="M4 2.5 20.5 12l-7 1.6-3.6 6.4z" fill="#1f6ff0" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+    </div>
+
     <header class="site-header" id="top">
-      <a class="brand" href="#top" aria-label="CasaToon home">
-        <img src="./public/images/logo%20png.png" alt="" />
-        <span><b>CasaToon</b><small>Stories brought to life</small></span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
-      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-        <a href="#features">Features</a>
-        <a href="#styles">Styles</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#testimonials">Testimonials</a>
-      </nav>
-      <div class="nav-actions"><a href="#">Log in</a><a class="button button-small" data-magnetic data-spark href="#pricing">Get started</a></div>
+      <div class="shell header-inner">
+        <a class="brand" href="#top" aria-label="CasaToon home"><img src="./public/images/logo%20png.png" alt="CasaToon" /></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <a href="#how-it-works">How it works</a>
+          <a href="#styles">Styles</a>
+          <a href="#featured">Stories</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#testimonials">Love</a>
+          <a class="nav-login" href="#">Log in</a>
+          <a class="button button-small" data-magnetic data-confetti href="#pricing">Get started <i class="icon icon-sm" data-lucide="sparkles" aria-hidden="true"></i></a>
+        </nav>
+      </div>
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-inner shell">
+      <!-- HERO -->
+      <section class="hero" data-parallax-scene>
+        <span class="cloud cloud-a" data-depth="0.03" aria-hidden="true"></span>
+        <span class="cloud cloud-b" data-depth="0.06" aria-hidden="true"></span>
+        <span class="cloud cloud-c" data-depth="0.02" aria-hidden="true"></span>
+        <span class="floaty star-a" data-depth="0.08" aria-hidden="true"><i class="icon" data-lucide="star" aria-hidden="true"></i></span>
+        <span class="floaty star-b" data-depth="0.05" aria-hidden="true"><i class="icon" data-lucide="star" aria-hidden="true"></i></span>
+        <span class="floaty star-c" data-depth="0.1" aria-hidden="true"><i class="icon" data-lucide="sparkles" aria-hidden="true"></i></span>
+        <span class="floaty rocket" data-depth="0.12" aria-hidden="true"><i class="icon" data-lucide="rocket" aria-hidden="true"></i></span>
+        <div class="shell hero-inner">
           <div class="hero-copy">
-            <p class="script-label hero-intro">Bring Your</p>
-            <h1 aria-label="Stories to Life with AI"><span class="hero-line">Stories to Life</span><span class="hero-line accent">with AI</span></h1>
-            <p class="hero-text">Turn imagination into magic, one scene at a time. Create animated videos, tell stories, and share your ideas with the world.</p>
-            <div class="hero-actions"><a class="button" data-magnetic data-spark href="#pricing">Start creating free <span>→</span></a><a class="watch-link" href="#featured"><i>▶</i> Watch a story</a></div>
-            <div class="social-proof"><span class="proof-faces"><b>J</b><b>M</b><b>A</b><b>K</b></span><span><strong>4.9/5</strong><small>Loved by happy creators</small></span></div>
+            <p class="pill pill-yellow"><i class="icon icon-sm" data-lucide="clapperboard" aria-hidden="true"></i> AI story studio for everyone</p>
+            <h1 class="toon-title bounce-in"><span class="word yellow">Bring</span> <span class="word blue">Your</span> <span class="word red">Stories</span> <span class="word yellow">to</span> <span class="word blue">Life!</span></h1>
+            <p class="hero-text">Type an idea, pick a style, and watch CasaToon turn it into a colorful animated video—in minutes, not weeks.</p>
+            <div class="hero-actions">
+              <a class="button button-big" data-magnetic data-confetti href="#pricing">Start creating free <i class="icon icon-sm" data-lucide="arrow-right" aria-hidden="true"></i></a>
+              <a class="button button-ghost" data-magnetic href="#featured"><i><i class="icon icon-xs" data-lucide="play" aria-hidden="true"></i></i> Watch a story</a>
+            </div>
+            <div class="hero-stats">
+              <div><strong data-count="120000">0</strong><small>stories made</small></div>
+              <div><strong data-count="5">0</strong><small>art styles</small></div>
+              <div><strong data-count="4.9" data-decimals="1">0</strong><small>creator rating</small></div>
+            </div>
           </div>
-          <div class="hero-visual">
-            <span class="doodle-loop" aria-hidden="true">↝</span>
-            <figure class="hero-frame"><img src="./public/images/hero%20image.webp" alt="A young storyteller waving beside a friendly lion" /><span class="spark spark-one">✦</span><span class="spark spark-two">✧</span></figure>
+          <div class="hero-visual" data-depth="-0.02">
+            <figure class="film-frame wobble">
+              <img src="./public/images/hero%20image.webp" alt="A young storyteller waving beside a friendly lion" />
+              <figcaption><span class="dot"></span> Now playing: <b>The Brave Lion</b></figcaption>
+            </figure>
+            <span class="sticker sticker-red" aria-hidden="true">NEW!</span>
+            <span class="sticker sticker-blue" aria-hidden="true">made in 4 min</span>
           </div>
         </div>
-        <div class="hero-benefits shell" id="features">
-          <article><span>✎</span><div><b>Easy to Use</b><small>No experience needed</small></div></article>
-          <article><span>♟</span><div><b>AI Animation</b><small>From words to wonder</small></div></article>
-          <article><span>✦</span><div><b>Magic in Minutes</b><small>Your idea becomes a video</small></div></article>
-          <article><span>▣</span><div><b>Made for Everyone</b><small>Every story is welcome</small></div></article>
-        </div>
+        <div class="filmstrip" aria-hidden="true"></div>
       </section>
 
+      <!-- FEATURES -->
+      <section class="features shell" id="features">
+        <article class="feature-card" style="--tint: var(--yellow)"><span><i class="icon" data-lucide="pencil" aria-hidden="true"></i></span><b>Easy to use</b><small>No experience needed</small></article>
+        <article class="feature-card" style="--tint: var(--blue)"><span><i class="icon" data-lucide="wand-sparkles" aria-hidden="true"></i></span><b>AI animation</b><small>From words to wonder</small></article>
+        <article class="feature-card" style="--tint: var(--red)"><span><i class="icon" data-lucide="zap" aria-hidden="true"></i></span><b>Magic in minutes</b><small>Idea to video, fast</small></article>
+        <article class="feature-card" style="--tint: var(--green)"><span><i class="icon" data-lucide="rainbow" aria-hidden="true"></i></span><b>Made for everyone</b><small>Every story is welcome</small></article>
+      </section>
+
+      <!-- TRUSTED -->
       <section class="trusted" aria-label="Loved by creators and teams around the world">
-        <p>Loved by creators and teams around the world</p>
-        <div class="logo-loop" tabindex="0">
+        <p>Loved by creators and classrooms everywhere</p>
+        <div class="logo-loop">
           <div class="logo-loop-track">
-            <div class="logo-loop-list">
-              <span class="partner-logo youtube"><i>▶</i>YouTube</span><span class="partner-logo google"><i>G</i>Google for Education</span><span class="partner-logo canva">Canva</span><span class="partner-logo hubspot"><i>⌘</i>HubSpot</span><span class="partner-logo vidiq"><i>▥</i>vidIQ</span><span class="partner-logo teachermade"><i>✦</i>teachermade</span>
-            </div>
-            <div class="logo-loop-list" aria-hidden="true">
-              <span class="partner-logo youtube"><i>▶</i>YouTube</span><span class="partner-logo google"><i>G</i>Google for Education</span><span class="partner-logo canva">Canva</span><span class="partner-logo hubspot"><i>⌘</i>HubSpot</span><span class="partner-logo vidiq"><i>▥</i>vidIQ</span><span class="partner-logo teachermade"><i>✦</i>teachermade</span>
-            </div>
+            <div class="logo-loop-list"><span>YouTube</span><span>Google for Education</span><span>Canva</span><span>HubSpot</span><span>vidIQ</span><span>teachermade</span></div>
+            <div class="logo-loop-list" aria-hidden="true"><span>YouTube</span><span>Google for Education</span><span>Canva</span><span>HubSpot</span><span>vidIQ</span><span>teachermade</span></div>
           </div>
         </div>
       </section>
 
+      <!-- HOW IT WORKS -->
       <section class="journey" id="how-it-works">
-        <div class="shell journey-inner">
-          <div class="section-title" data-reveal="blur"><p>From idea to animation</p><h2>Three Steps to Your First Story</h2></div>
-          <div class="journey-content">
-            <div class="journey-steps">
-              <article class="journey-card" data-reveal data-delay="0"><span class="step-badge">1</span><span class="step-icon">✎</span><h3>Write Your Story</h3><p>Bring your idea to life with a simple prompt or script.</p></article>
-              <span class="journey-arrow" aria-hidden="true">↝</span>
-              <article class="journey-card" data-reveal data-delay="100"><span class="step-badge">2</span><span class="step-icon">▧</span><h3>Choose a Style</h3><p>Pick the look that fits your story, from 2D to realistic.</p></article>
-              <span class="journey-arrow arrow-two" aria-hidden="true">↝</span>
-              <article class="journey-card" data-reveal data-delay="200"><span class="step-badge">3</span><span class="step-icon">▶</span><h3>Watch It Come Alive</h3><p>AI brings your characters, voice, and scenes to life in minutes.</p></article>
+        <div class="shell">
+          <div class="section-title" data-reveal><p class="pill pill-blue">From idea to animation</p><h2 class="toon-title small"><span class="blue">Three steps</span> <span class="yellow">to your first story</span></h2></div>
+          <div class="journey-steps">
+            <article class="step-card" data-reveal data-delay="0" style="--tint: var(--yellow)"><span class="step-num">1</span><span class="step-icon"><i class="icon" data-lucide="pencil" aria-hidden="true"></i></span><h3>Write your story</h3><p>Start with a sentence, a script, or a wild idea.</p></article>
+            <span class="step-arrow" aria-hidden="true"><i class="icon" data-lucide="move-right" aria-hidden="true"></i></span>
+            <article class="step-card" data-reveal data-delay="100" style="--tint: var(--blue)"><span class="step-num">2</span><span class="step-icon"><i class="icon" data-lucide="palette" aria-hidden="true"></i></span><h3>Pick a style</h3><p>2D, 3D, anime, clay, or realistic—your call.</p></article>
+            <span class="step-arrow" aria-hidden="true"><i class="icon" data-lucide="move-right" aria-hidden="true"></i></span>
+            <article class="step-card" data-reveal data-delay="200" style="--tint: var(--red)"><span class="step-num">3</span><span class="step-icon"><i class="icon" data-lucide="clapperboard" aria-hidden="true"></i></span><h3>Watch it come alive</h3><p>Characters, voices, and scenes—ready in minutes.</p></article>
+          </div>
+          <div class="try-box" data-reveal>
+            <label for="idea">Try it: type an idea and hit play</label>
+            <div class="try-row">
+              <input id="idea" type="text" placeholder="A puppy who dreams of flying to the moon…" maxlength="90" />
+              <button class="button" type="button" data-try-play data-confetti><i class="icon icon-xs" data-lucide="play" aria-hidden="true"></i> Preview</button>
             </div>
-            <div class="journey-art" data-reveal="right"><img src="./public/images/painting.png" alt="Young artist painting his imagined world" /><span>Make imagination<br />your superpower!</span></div>
+            <p class="try-output" data-try-output aria-live="polite">Your scene will appear here.</p>
           </div>
         </div>
       </section>
 
+      <!-- STYLES -->
       <section class="styles-section" id="styles">
         <div class="shell">
-          <div class="section-title" data-reveal="blur"><p>One story, many possibilities</p><h2>Pick Your Story Style</h2></div>
-          <div class="style-carousel">
-            <button class="carousel-arrow prev" type="button" aria-label="Previous styles">‹</button>
-            <div class="style-track">
-              <article class="style-card tilt-card"><img src="./public/images/pixar_thumbnail.webp" alt="3D animation style" /><div><b>3D Animation</b><small>Cinematic and expressive</small></div></article>
-              <article class="style-card tilt-card"><img src="./public/images/2D_thumbnail.webp" alt="2D cartoon style" /><div><b>2D Cartoon</b><small>Playful and colorful</small></div></article>
-              <article class="style-card tilt-card"><img src="./public/images/anime_thumbnail.webp" alt="Anime style" /><div><b>Anime</b><small>Dynamic and vibrant</small></div></article>
-              <article class="style-card tilt-card"><img src="./public/images/Claymation_thumbnail.webp" alt="Claymation style" /><div><b>Claymation</b><small>Handcrafted and charming</small></div></article>
-              <article class="style-card tilt-card"><img src="./public/images/Reaslitic_thumbnail.webp" alt="Realistic style" /><div><b>Realistic</b><small>Photoreal and immersive</small></div></article>
+          <div class="section-title" data-reveal><p class="pill pill-red">One story, many looks</p><h2 class="toon-title small"><span class="yellow">Pick your</span> <span class="blue">story style</span></h2></div>
+          <div class="style-picker">
+            <div class="style-stage" data-reveal>
+              <figure class="film-frame style-frame">
+                <video data-style-video muted playsinline loop preload="metadata" src="./public/clips/Pixar%20Clip.mp4#t=0.1"></video>
+                <div class="clapper" data-clapper aria-hidden="true"><div class="clapper-top"></div><div class="clapper-board"><span>SCENE</span><b data-clapper-take>01</b></div></div>
+                <button class="style-play" type="button" data-style-play aria-label="Play style preview"><i class="icon" data-lucide="play" aria-hidden="true"></i></button>
+                <figcaption><b data-style-name>3D Animation</b> · <span data-style-tag>Cinematic and expressive</span></figcaption>
+              </figure>
+              <div class="style-strip" aria-label="Style thumbnails">
+                <button type="button" class="is-active" data-style="pixar" data-clip="./public/clips/Pixar%20Clip.mp4" data-name="3D Animation" data-tag="Cinematic and expressive" aria-label="3D animation"><video muted playsinline preload="metadata" src="./public/clips/Pixar%20Clip.mp4#t=0.1" tabindex="-1"></video></button>
+                <button type="button" data-style="2d" data-clip="./public/clips/2D%20Clip.mp4" data-name="2D Cartoon" data-tag="Playful and colorful" aria-label="2D cartoon"><video muted playsinline preload="metadata" src="./public/clips/2D%20Clip.mp4#t=0.1" tabindex="-1"></video></button>
+                <button type="button" data-style="anime" data-clip="./public/clips/Anime%20Clip.mp4" data-name="Anime" data-tag="Dynamic and vibrant" aria-label="Anime"><video muted playsinline preload="metadata" src="./public/clips/Anime%20Clip.mp4#t=0.1" tabindex="-1"></video></button>
+                <button type="button" data-style="clay" data-clip="./public/clips/Claymation%20Clip.mp4" data-name="Claymation" data-tag="Handcrafted and charming" aria-label="Claymation"><video muted playsinline preload="metadata" src="./public/clips/Claymation%20Clip.mp4#t=0.1" tabindex="-1"></video></button>
+                <button type="button" data-style="real" data-clip="./public/clips/Realistic%20Clip.mp4" data-name="Realistic" data-tag="Photoreal and immersive" aria-label="Realistic"><video muted playsinline preload="metadata" src="./public/clips/Realistic%20Clip.mp4#t=0.1" tabindex="-1"></video></button>
+              </div>
             </div>
-            <button class="carousel-arrow next" type="button" aria-label="Next styles">›</button>
           </div>
         </div>
       </section>
 
+      <!-- FEATURED -->
       <section class="featured" id="featured">
         <div class="shell">
-          <div class="featured-title" data-reveal="blur"><span>✦</span><h2>Featured Stories</h2><span>✦</span></div>
-          <div class="story-filters" aria-label="Filter featured stories"><button class="is-active" type="button" data-filter="all">All stories</button><button type="button" data-filter="adventure">Adventure</button><button type="button" data-filter="fantasy">Fantasy</button><button type="button" data-filter="friendship">Friendship</button><button type="button" data-filter="education">Education</button></div>
-          <div class="video-grid">
-            <article data-category="education"><video preload="auto" muted playsinline src="./public/clips/2D%20Clip.mp4#t=0.1"></video><button type="button" aria-label="Play The Lost Map">▶</button><div><b>The Lost Map</b><small>2D Cartoon · Education</small></div></article>
-            <article data-category="fantasy adventure"><video preload="auto" muted playsinline src="./public/clips/Pixar%20Clip.mp4#t=0.1"></video><button type="button" aria-label="Play Forest Friends">▶</button><div><b>Forest Friends</b><small>3D Animation · Fantasy</small></div></article>
-            <article data-category="adventure"><video preload="auto" muted playsinline src="./public/clips/Anime%20Clip.mp4#t=0.1"></video><button type="button" aria-label="Play Beyond the Stars">▶</button><div><b>Beyond the Stars</b><small>Anime · Adventure</small></div></article>
-            <article data-category="friendship"><video preload="auto" muted playsinline src="./public/clips/Claymation%20Clip.mp4#t=0.1"></video><button type="button" aria-label="Play The Tiny Hero">▶</button><div><b>The Tiny Hero</b><small>Claymation · Friendship</small></div></article>
-            <article data-category="education"><video preload="auto" muted playsinline src="./public/clips/Realistic%20Clip.mp4#t=0.1"></video><button type="button" aria-label="Play Wild Adventure">▶</button><div><b>Wild Adventure</b><small>Realistic · Education</small></div></article>
-            <article data-category="friendship fantasy"><video preload="auto" muted playsinline src="./public/clips/3D%20Clip.mp4#t=0.1"></video><button type="button" aria-label="Play Magic Together">▶</button><div><b>Magic Together</b><small>3D Animation · Friendship</small></div></article>
+          <div class="section-title" data-reveal><p class="pill pill-yellow">Fresh from the studio</p><h2 class="toon-title small"><span class="blue">Featured</span> <span class="red">stories</span></h2></div>
+          <div class="story-filters" aria-label="Filter featured stories">
+            <button class="is-active" type="button" data-filter="all">All</button><button type="button" data-filter="adventure">Adventure</button><button type="button" data-filter="fantasy">Fantasy</button><button type="button" data-filter="friendship">Friendship</button><button type="button" data-filter="education">Education</button>
           </div>
-          <a class="button featured-button" data-magnetic data-spark href="#styles">Explore all stories</a>
+          <div class="video-grid">
+            <article data-category="education"><video preload="metadata" muted playsinline src="./public/clips/2D%20Clip.mp4#t=0.1"></video><button type="button" aria-label="Play The Lost Map"><i class="icon icon-sm" data-lucide="play" aria-hidden="true"></i></button><div><b>The Lost Map</b><small>2D Cartoon · Education</small></div></article>
+            <article data-category="fantasy adventure"><video preload="metadata" muted playsinline src="./public/clips/Pixar%20Clip.mp4#t=0.1"></video><button type="button" aria-label="Play Forest Friends"><i class="icon icon-sm" data-lucide="play" aria-hidden="true"></i></button><div><b>Forest Friends</b><small>3D Animation · Fantasy</small></div></article>
+            <article data-category="adventure"><video preload="metadata" muted playsinline src="./public/clips/Anime%20Clip.mp4#t=0.1"></video><button type="button" aria-label="Play Beyond the Stars"><i class="icon icon-sm" data-lucide="play" aria-hidden="true"></i></button><div><b>Beyond the Stars</b><small>Anime · Adventure</small></div></article>
+            <article data-category="friendship"><video preload="metadata" muted playsinline src="./public/clips/Claymation%20Clip.mp4#t=0.1"></video><button type="button" aria-label="Play The Tiny Hero"><i class="icon icon-sm" data-lucide="play" aria-hidden="true"></i></button><div><b>The Tiny Hero</b><small>Claymation · Friendship</small></div></article>
+            <article data-category="education"><video preload="metadata" muted playsinline src="./public/clips/Realistic%20Clip.mp4#t=0.1"></video><button type="button" aria-label="Play Wild Adventure"><i class="icon icon-sm" data-lucide="play" aria-hidden="true"></i></button><div><b>Wild Adventure</b><small>Realistic · Education</small></div></article>
+            <article data-category="friendship fantasy"><video preload="metadata" muted playsinline src="./public/clips/3D%20Clip.mp4#t=0.1"></video><button type="button" aria-label="Play Magic Together"><i class="icon icon-sm" data-lucide="play" aria-hidden="true"></i></button><div><b>Magic Together</b><small>3D Animation · Friendship</small></div></article>
+          </div>
         </div>
       </section>
 
+      <!-- CREATORS -->
       <section class="creators">
         <div class="shell">
-          <div class="section-title" data-reveal="blur"><p>For every imagination</p><h2>Made for Every Kind of Creator</h2></div>
+          <div class="section-title" data-reveal><p class="pill pill-blue">For every imagination</p><h2 class="toon-title small"><span class="yellow">Made for</span> <span class="blue">every kind</span> <span class="red">of creator</span></h2></div>
           <div class="creator-grid">
-            <article data-reveal data-delay="0"><span>☀</span><h3>Storytellers</h3><p>Turn ideas into unforgettable stories.</p></article>
-            <article data-reveal data-delay="70"><span>▶</span><h3>YouTubers</h3><p>Create engaging videos faster than ever.</p></article>
-            <article data-reveal data-delay="140"><span>♙</span><h3>Teachers</h3><p>Make lessons memorable and fun.</p></article>
-            <article data-reveal data-delay="210"><span>◇</span><h3>Marketing Teams</h3><p>Bring campaigns to life with visuals.</p></article>
-            <article data-reveal data-delay="280"><span>♡</span><h3>Parents & Kids</h3><p>Create and bond through storytelling.</p></article>
+            <article data-reveal data-delay="0" style="--tint: var(--yellow)"><span><i class="icon" data-lucide="book-open" aria-hidden="true"></i></span><h3>Storytellers</h3><p>Turn ideas into unforgettable tales.</p></article>
+            <article data-reveal data-delay="70" style="--tint: var(--red)"><span><i class="icon" data-lucide="tv" aria-hidden="true"></i></span><h3>YouTubers</h3><p>Ship engaging videos faster than ever.</p></article>
+            <article data-reveal data-delay="140" style="--tint: var(--blue)"><span><i class="icon" data-lucide="apple" aria-hidden="true"></i></span><h3>Teachers</h3><p>Make lessons memorable and fun.</p></article>
+            <article data-reveal data-delay="210" style="--tint: var(--green)"><span><i class="icon" data-lucide="megaphone" aria-hidden="true"></i></span><h3>Marketing teams</h3><p>Bring campaigns to life with visuals.</p></article>
+            <article data-reveal data-delay="280" style="--tint: var(--pink)"><span><i class="icon" data-lucide="heart" aria-hidden="true"></i></span><h3>Parents & kids</h3><p>Create and bond through storytelling.</p></article>
           </div>
         </div>
       </section>
 
+      <!-- OUTCOMES -->
       <section class="outcomes">
         <div class="shell outcomes-layout">
+          <div class="outcomes-art" data-reveal><img class="wobble" src="./public/images/painting.png" alt="Young creator painting a story world" /><span class="sticker sticker-yellow">imagination = superpower</span></div>
           <div class="outcomes-copy">
-            <div class="section-title align-left" data-reveal="blur"><p>Creative freedom without the studio</p><h2>A Studio That Fits in Your Imagination</h2></div>
-            <div class="outcome-grid">
-              <article data-reveal data-delay="0"><span>◷</span><h3>Minutes, Not Weeks</h3><p>Go from idea to a finished animated video in minutes.</p></article>
-              <article data-reveal data-delay="100"><span>✦</span><h3>One Creator + AI</h3><p>No big team. No complex software. Just you and AI.</p></article>
-              <article data-reveal data-delay="200"><span>◉</span><h3>Five Visual Styles</h3><p>Choose the look that fits your story and audience.</p></article>
-            </div>
-            <p class="proof-ribbon">Everything you need to bring stories to life.</p>
+            <div class="section-title align-left" data-reveal><p class="pill pill-red">No studio required</p><h2 class="toon-title small"><span class="blue">A studio that fits</span> <span class="yellow">in your pocket</span></h2></div>
+            <ul class="outcome-list">
+              <li data-reveal data-delay="0"><span><i class="icon" data-lucide="clock" aria-hidden="true"></i></span><div><b>Minutes, not weeks</b><small>From idea to finished video before lunch.</small></div></li>
+              <li data-reveal data-delay="100"><span><i class="icon" data-lucide="user-round" aria-hidden="true"></i></span><div><b>One creator + AI</b><small>No big team, no complex software.</small></div></li>
+              <li data-reveal data-delay="200"><span><i class="icon" data-lucide="drama" aria-hidden="true"></i></span><div><b>Five visual styles</b><small>Pick the look that fits your audience.</small></div></li>
+            </ul>
           </div>
-          <div class="outcomes-art" data-reveal="right"><img src="./public/images/painting.png" alt="Young creator painting a story world" /></div>
         </div>
       </section>
 
+      <!-- PRICING -->
       <section class="pricing" id="pricing">
         <div class="shell">
-          <div class="section-title" data-reveal="blur"><p>Simple plans, no surprises</p><h2>Choose Your Creative Pace</h2></div>
+          <div class="section-title" data-reveal><p class="pill pill-yellow">Simple plans, no surprises</p><h2 class="toon-title small"><span class="blue">Choose your</span> <span class="red">creative pace</span></h2></div>
+          <div class="billing-toggle" data-reveal>
+            <span>Monthly</span>
+            <button class="switch" type="button" role="switch" aria-checked="false" aria-label="Bill yearly" data-billing-toggle><i></i></button>
+            <span>Yearly <em class="save-tag">save 20%</em></span>
+          </div>
           <div class="pricing-grid">
-            <article class="plan-card" data-reveal data-delay="0"><p class="plan-name">Free</p><p class="price"><strong>$0</strong><span>/ month</span></p><p class="plan-copy">Perfect to try, explore, and make your first story.</p><ul><li>5 videos per month</li><li>720p exports</li><li>Basic styles</li><li>CasaToon watermark</li></ul><button class="plan-button checkout-trigger" type="button" data-plan="Free" data-price="$0/month">Get started free</button></article>
-            <article class="plan-card plan-featured" data-reveal data-delay="100"><span class="popular">MOST POPULAR</span><p class="plan-name">Creator</p><p class="price"><strong>$15</strong><span>/ month</span></p><p class="plan-copy">Everything you need to create more stories.</p><ul><li>Unlimited videos</li><li>1080p exports</li><li>All five styles</li><li>No watermark</li></ul><button class="button checkout-trigger" data-spark type="button" data-plan="Creator" data-price="$15/month">Start 7-day free trial</button></article>
-            <article class="plan-card" data-reveal data-delay="200"><p class="plan-name">Studio</p><p class="price"><strong>$39</strong><span>/ month</span></p><p class="plan-copy">For teams and power creators making at scale.</p><ul><li>Everything in Creator</li><li>4K exports</li><li>Team collaboration</li><li>Priority support</li></ul><button class="plan-button checkout-trigger" type="button" data-plan="Studio" data-price="$39/month">Start 7-day free trial</button></article>
+            <article class="plan-card" data-reveal data-delay="0" style="--tint: var(--green)"><p class="plan-name">Free</p><p class="price"><strong data-monthly="0" data-yearly="0">$0</strong><span>/ month</span></p><p class="plan-copy">Perfect to try, explore, and make your first story.</p><ul><li>5 videos per month</li><li>720p exports</li><li>Basic styles</li><li>CasaToon watermark</li></ul><button class="button button-ghost checkout-trigger" type="button" data-plan="Free" data-price="$0/month">Get started free</button></article>
+            <article class="plan-card plan-featured" data-reveal data-delay="100" style="--tint: var(--yellow)"><span class="popular"><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i> Most popular</span><p class="plan-name">Creator</p><p class="price"><strong data-monthly="15" data-yearly="12">$15</strong><span>/ month</span></p><p class="plan-copy">Everything you need to create more stories.</p><ul><li>Unlimited videos</li><li>1080p exports</li><li>All five styles</li><li>No watermark</li></ul><button class="button checkout-trigger" data-confetti type="button" data-plan="Creator" data-price="$15/month">Start 7-day free trial</button></article>
+            <article class="plan-card" data-reveal data-delay="200" style="--tint: var(--blue)"><p class="plan-name">Studio</p><p class="price"><strong data-monthly="39" data-yearly="31">$39</strong><span>/ month</span></p><p class="plan-copy">For teams and power creators making at scale.</p><ul><li>Everything in Creator</li><li>4K exports</li><li>Team collaboration</li><li>Priority support</li></ul><button class="button button-ghost checkout-trigger" type="button" data-plan="Studio" data-price="$39/month">Start 7-day free trial</button></article>
           </div>
         </div>
       </section>
 
+      <!-- TESTIMONIALS -->
       <section class="testimonials" id="testimonials">
         <div class="shell">
-          <div class="section-title" data-reveal="blur"><p>Real stories from real creators</p><h2>Loved by Creators Everywhere</h2></div>
+          <div class="section-title" data-reveal><p class="pill pill-blue">Real stories from real creators</p><h2 class="toon-title small"><span class="yellow">Loved by</span> <span class="red">creators</span> <span class="blue">everywhere</span></h2></div>
           <div class="testimonial-grid">
-            <article data-reveal data-delay="0"><div class="quote-top"><span class="avatar avatar-one">EC</span><span><b>Emily Carter</b><small>Elementary teacher</small></span></div><div class="stars">★★★★★</div><p>“CasaToon helps my students create amazing stories they’re proud to share.”</p></article>
-            <article data-reveal data-delay="100"><div class="quote-top"><span class="avatar avatar-two">AM</span><span><b>Alex Morgan</b><small>YouTuber</small></span></div><div class="stars">★★★★★</div><p>“I went from idea to finished video in under ten minutes. Mind-blowing!”</p></article>
-            <article data-reveal data-delay="200"><div class="quote-top"><span class="avatar avatar-three">SK</span><span><b>Sarah Kim</b><small>Mom & creator</small></span></div><div class="stars">★★★★★</div><p>“The styles are beautiful and the results look polished. My kids love it too.”</p></article>
+            <article data-reveal data-delay="0" style="--tint: var(--yellow)"><div class="quote-top"><span class="avatar">EC</span><span><b>Emily Carter</b><small>Elementary teacher</small></span></div><div class="stars" aria-label="5 out of 5 stars"><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i></div><p>“CasaToon helps my students create amazing stories they’re proud to share.”</p></article>
+            <article data-reveal data-delay="100" style="--tint: var(--blue)"><div class="quote-top"><span class="avatar">AM</span><span><b>Alex Morgan</b><small>YouTuber</small></span></div><div class="stars" aria-label="5 out of 5 stars"><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i></div><p>“I went from idea to finished video in under ten minutes. Mind-blowing!”</p></article>
+            <article data-reveal data-delay="200" style="--tint: var(--red)"><div class="quote-top"><span class="avatar">SK</span><span><b>Sarah Kim</b><small>Mom & creator</small></span></div><div class="stars" aria-label="5 out of 5 stars"><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i><i class="icon icon-xs" data-lucide="star" aria-hidden="true"></i></div><p>“The styles are beautiful and the results look polished. My kids love it too.”</p></article>
           </div>
         </div>
       </section>
 
+      <!-- FINAL CTA -->
       <section class="final-cta">
-        <div class="shell cta-inner">
-          <div class="cta-image" data-reveal="left"><img src="./public/images/hero%20image.webp" alt="Young storyteller and friendly lion" /></div>
-          <div class="cta-copy" data-reveal="blur"><p>Your Next Story<br />Is Ready to Begin</p><span>Create your first video in minutes—no experience needed.</span></div>
-          <button class="button button-dark checkout-trigger" data-magnetic data-spark type="button" data-plan="Creator" data-price="$15/month">Create your first video <b>→</b></button>
+        <span class="cloud cloud-d" aria-hidden="true"></span>
+        <span class="cloud cloud-e" aria-hidden="true"></span>
+        <div class="shell cta-inner" data-reveal>
+          <img class="cta-logo wobble" src="./public/images/logo%20png.png" alt="" />
+          <h2 class="toon-title"><span class="yellow">Your next story</span> <span class="blue">starts now!</span></h2>
+          <p>Create your first video in minutes—no experience needed.</p>
+          <button class="button button-big checkout-trigger" data-magnetic data-confetti type="button" data-plan="Creator" data-price="$15/month">Create your first video <i class="icon icon-sm" data-lucide="arrow-right" aria-hidden="true"></i></button>
         </div>
+        <div class="filmstrip" aria-hidden="true"></div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="shell footer-grid">
-        <div class="footer-brand"><a class="brand" href="#top"><img src="./public/images/logo%20png.png" alt="" /><span><b>CasaToon</b><small>Stories brought to life</small></span></a><p>Bring imagination to life with the power of AI.</p></div>
+        <div class="footer-brand"><img src="./public/images/logo%20png.png" alt="CasaToon" /><p>Bring imagination to life with the power of AI.</p></div>
         <div><b>Product</b><a href="#features">Features</a><a href="#styles">Styles</a><a href="#how-it-works">How it works</a><a href="#pricing">Pricing</a></div>
-        <div><b>Company</b><a href="#testimonials">About us</a><a href="mailto:hello@casatoon.com">Contact</a><a href="#testimonials">Stories</a></div>
+        <div><b>Company</b><a href="#testimonials">About us</a><a href="mailto:hello@casatoon.com">Contact</a><a href="#featured">Stories</a></div>
         <div><b>Resources</b><a href="#how-it-works">Help center</a><a href="#featured">Community</a><a href="#pricing">Plans</a></div>
       </div>
-      <div class="shell footer-bottom"><p>© 2026 CasaToon. All rights reserved.</p><div><a href="#">Privacy</a><a href="#">Terms</a></div></div>
+      <div class="shell footer-bottom"><p>© 2026 CasaToon. Made with <i class="icon icon-xs" data-lucide="heart" aria-hidden="true"></i> for storytellers.</p><div><a href="#">Privacy</a><a href="#">Terms</a></div></div>
     </footer>
+
+    <button class="to-top" type="button" data-to-top aria-label="Back to top"><i class="icon" data-lucide="rocket" aria-hidden="true"></i><span class="to-top-smoke" aria-hidden="true"></span></button>
 
     <div class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" aria-hidden="true">
       <div class="checkout-backdrop" data-checkout-close></div>
       <section class="checkout-dialog">
         <button class="checkout-close" type="button" data-checkout-close aria-label="Close checkout">×</button>
-        <p class="script-label">Start Creating</p><h2 id="checkout-title">Your story begins here.</h2>
-        <div class="checkout-summary"><span><b data-checkout-plan>Creator</b><small data-checkout-price>$15/month</small></span><em>Monthly</em></div>
-        <form data-checkout-form><label>Your name<input name="name" autocomplete="name" placeholder="Alex Santos" required /></label><label>Email address<input name="email" type="email" autocomplete="email" placeholder="alex@example.com" required /></label><button class="button" type="submit">Continue to CasaToon →</button></form>
-        <p class="checkout-feedback" data-checkout-feedback hidden>You're on the list! Your CasaToon adventure is ready to begin.</p><small>This is a demo signup. No payment will be taken.</small>
+        <p class="pill pill-yellow">Start creating</p>
+        <h2 id="checkout-title" class="toon-title small"><span class="blue">Your story</span> <span class="yellow">begins here.</span></h2>
+        <div class="checkout-summary"><span><b data-checkout-plan>Creator</b><small data-checkout-price>$15/month</small></span><em>plan</em></div>
+        <form data-checkout-form>
+          <label>Your name<input name="name" autocomplete="name" placeholder="Alex Santos" required /></label>
+          <label>Email address<input name="email" type="email" autocomplete="email" placeholder="alex@example.com" required /></label>
+          <button class="button" type="submit" data-confetti>Continue to CasaToon <i class="icon icon-sm" data-lucide="arrow-right" aria-hidden="true"></i></button>
+        </form>
+        <p class="checkout-feedback" data-checkout-feedback hidden><i class="icon icon-sm" data-lucide="party-popper" aria-hidden="true"></i> You're on the list! Your CasaToon adventure is ready to begin.</p>
+        <small>This is a demo signup. No payment will be taken.</small>
       </section>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
