@@ -149,10 +149,10 @@ i.icon { display: inline-block; }
 /* Trusted */
 .trusted { padding: 60px 0 20px; text-align: center; }
 .trusted p { font-family: var(--font-display); font-weight: 600; color: var(--muted); margin-bottom: 18px; }
-.logo-loop { overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent); }
+.logo-loop { overflow: hidden; padding: 8px 0 14px; mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
 .logo-loop-track { display: flex; width: max-content; animation: marquee 26s linear infinite; }
 .logo-loop:hover .logo-loop-track { animation-play-state: paused; }
-.logo-loop-list { display: flex; gap: 16px; padding-right: 16px; }
+.logo-loop-list { display: flex; flex: none; justify-content: space-around; gap: 16px; min-width: 100vw; padding: 0 24px; }
 .logo-loop-list span { padding: 10px 22px; border: var(--stroke); border-radius: 999px; background: var(--white); box-shadow: 3px 3px 0 var(--ink); font-family: var(--font-display); font-weight: 700; font-size: 17px; white-space: nowrap; transition: transform .25s var(--bounce), background .2s; }
 .logo-loop-list span:hover { transform: translateY(-4px) rotate(-3deg); background: var(--yellow); }
 
